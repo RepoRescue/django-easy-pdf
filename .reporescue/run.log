@@ -1,0 +1,39 @@
+127.0.0.1 - - [25/Apr/2026 13:09:10] "GET /simple/ HTTP/1.1" 200 -
+127.0.0.1 - - [25/Apr/2026 13:09:10] "GET /invoice/ HTTP/1.1" 200 -
+[validate] Django configured, easy_pdf imported
+[validate] encode_filename OK -> filename*=UTF-8''hello%20world.pdf
+[validate] html_to_pdf OK -> 1776 bytes
+[validate] make_response OK
+[validate] render_to_pdf OK -> 1917 bytes
+[validate] easy_pdf.exceptions OK
+[validate] werkzeug serving on 127.0.0.1:44157
+[validate] /simple/ -> 1917 bytes, magic OK
+[validate] /invoice/ -> 2318 bytes, attachment OK
+[validate] pypdf extracted 237 chars; markers present
+[validate] STATUS: USABLE
+[scenario] writing to /tmp/sales-pdfs-mv0h5mhe
+[scenario] APAC: 2299 bytes -> /tmp/sales-pdfs-mv0h5mhe/APAC.pdf
+[scenario] EMEA: 2292 bytes -> /tmp/sales-pdfs-mv0h5mhe/EMEA.pdf
+[scenario] AMER: 2300 bytes -> /tmp/sales-pdfs-mv0h5mhe/AMER.pdf
+[scenario] verified APAC: total 26400.00 in PDF text
+[scenario] verified EMEA: total 35950.00 in PDF text
+[scenario] verified AMER: total 32350.00 in PDF text
+[scenario] non-ASCII filename: filename*=UTF-8''ventas-espa%C3%B1a.pdf
+[scenario] all 3 regional reports generated and verified
+[bug-hunt] probe: empty html
+[bug-hunt]   OK: empty html
+[bug-hunt] probe: unicode (Polish + Chinese)
+[bug-hunt]   OK: unicode (Polish + Chinese)
+[bug-hunt] probe: state leak across 50 calls
+[bug-hunt]   OK: state leak across 50 calls
+[bug-hunt] probe: concurrent (8 threads)
+[bug-hunt]   OK: concurrent (8 threads)
+[bug-hunt] probe: large input (5000 rows)
+[bug-hunt]   5000 rows -> 122363 bytes in 9.20s
+[bug-hunt]   OK: large input (5000 rows)
+[bug-hunt] probe: encode_filename edge cases
+[bug-hunt]   OK: encode_filename edge cases
+[bug-hunt] probe: PDFRenderingError shape
+[bug-hunt]   OK: PDFRenderingError shape
+
+[bug-hunt] probes: 7, findings: 0
